@@ -89,7 +89,7 @@ const routes: Routes = [
   {path:'insurance-account-details',component:InsuranceAccountDetailsComponent},
   {path:'policy-payment',component:PolicyPaymentComponent},
   {path:'payment-slip',component:PaymentSlipComponent},
-  {path:'404Error',component:ErrorPageComponent}
+  {path:'**',component:ErrorPageComponent}
 ];
 
 @NgModule({
