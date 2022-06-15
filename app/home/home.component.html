@@ -1,0 +1,103 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: #e3f2fd;">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <!-- <li class="nav-logo">
+                    
+                </li> -->
+                <li class="nav-brand">
+                    <h5><a class="nav-link active "  aria-current="page" routerLink="app-Home">{{title}}</a></h5>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active "  aria-current="page" routerLink="app-Home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">about us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Service</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="customer-login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="customer-registration">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="agent-login">Agent Login</a>
+                </li>
+                <li class="nav-item dropdown" ngbDropdown>
+                    <a class="nav-link dropdown-toggle active" id="navbarScrollingDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
+                        Insurance Plans
+                    </a>
+                    <ul class="dropdown-menu" style="background: transparent;" ngbDropdownMenu
+                        aria-labelledby="navbarScrollingDropdown">
+                        <li ngbDropdownItem><a class="dropdown-item" routerLink="protection-plan">Protection Plans</a>
+                        </li>
+                        <li ngbDropdownItem><a class="dropdown-item" routerLink="child-plan">Child Plans</a></li>
+
+                        <li ngbDropdownItem><a class="dropdown-item" href="#">Saving Plans</a></li>
+                        <li ngbDropdownItem><a class="dropdown-item" href="#">Growth Plans</a></li>
+                        <li ngbDropdownItem><a class="dropdown-item" href="#">Group Plans</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Contact Us</a>
+                </li>
+            </ul>
+            <form class="d-flex input-group w-auto">
+                <input type="search" type="search" class="form-control rounded" placeholder="Search"
+                    aria-label="Search" />
+                <span class="input-group-text border-0" id="search-addon">
+                    <i class="fa fa-search"></i>
+                </span>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<img src="https://cf.ltkcdn.net/family/images/orig/266320-2120x1413-happy-household.jpg" class="w-100" alt="zoom" />
+<footer class="bg-dark text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+            <!-- Facebook -->
+            <a mdbRipple class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                    class="fa fa-facebook-f"></i></a>
+
+            <!-- Twitter -->
+            <a mdbRipple class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                    class="fa fa-twitter"></i></a>
+
+            <!-- Google -->
+            <a mdbRipple class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                    class="fa fa-google"></i></a>
+
+            <!-- Instagram -->
+            <a mdbRipple class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                    class="fa fa-instagram"></i></a>
+
+            <!-- Linkedin -->
+            <a mdbRipple class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                    class="fa fa-linkedin"></i></a>
+
+            <!-- Github -->
+            <a mdbRipple class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                    class="fa fa-github"></i></a>
+        </section>
+        <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(19, 18, 18, 0.2);">
+        © 2022 Copyright AR-Insurance
+        <br>
+        <a routerLink="employee-login">Employee Login</a>
+        <br>
+        <a routerLink="admin-login">Admin Login</a>
+    </div>
+    <!-- Copyright -->
+</footer>
