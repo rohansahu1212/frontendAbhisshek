@@ -25,22 +25,10 @@ export class CustomerRegistrationComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit()
+  onSubmit(data:any)
   {
-    let data={
-      "cust_name":this.cust_name,
-      "dob":this.dob,
-      "loginId":this.loginId,
-      "password":this.password,
-      "address":this.address,
-      "email":this.email,
-      "state":this.state,
-      "city":this.city,
-      "mobile":this.mobile,
-      "nominee":this.nominee,
-      "nomineeRelation":this.nomineeRelation
-    }
-   this.service.addCustomer(data);
+    console.warn(data);
+   //this.service.addCustomer(data);
   }
 
 }

@@ -3,7 +3,7 @@
   <p class="text-center">Kindly enter the credentials</p>
 </div>
 <div class="container">
-  <form (ngSubmit)="onSubmit()">
+  <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
     <table class="table table-bordered">
       <tbody>
         <tr>
