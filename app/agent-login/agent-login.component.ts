@@ -35,11 +35,11 @@ credentials={
     // }else{
     //   alert("**Please Fill both Username and Password");
     // }
-    if(this.credentials.username=="vineet" && this.credentials.password=="vineet"){
+    if(this.credentials.username.match("rohan") && this.credentials.password.match("pass")){
       window.location.href="/agent-dashboard"
       // this. router. navigate(['/customer-dashboard']); 
     }else{
-      alert("wrong credentials");
+      alert("wrong credentialsss");
     }
   }
 }
