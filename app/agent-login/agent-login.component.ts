@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AgentLoginService } from '../services/services/agent-login.service';
+
 
 
 @Component({
@@ -13,7 +13,7 @@ credentials={
   username:'',
   password:''
 }
-  constructor(private loginService: AgentLoginService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
@@ -39,7 +39,7 @@ credentials={
       window.location.href="/agent-dashboard"
       // this. router. navigate(['/customer-dashboard']); 
     }else{
-      alert("wrong credentialsss");
+      alert("wrong credentials");
     }
   }
 }
