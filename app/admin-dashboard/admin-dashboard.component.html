@@ -13,10 +13,13 @@
                             Agent
                         </a>
                         <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="navbarScrollingDropdown">
-                            <li ngbDropdownItem><a class="dropdown-item" href="agentRegistration">Add Agent</a></li>
-                            <li ngbDropdownItem><a class="dropdown-item" href="viewAgents">View Agent</a></li>
-                            <li ngbDropdownItem><a class="dropdown-item" href="viewCommission">View Commisssion</a></li>
-                            <li ngbDropdownItem><a class="dropdown-item" href="viewCommWithdrawal">View Commission
+                            <li ngbDropdownItem><a class="dropdown-item" routerLink="/agentRegistration">Add Agent</a>
+                            </li>
+                            <li ngbDropdownItem><a class="dropdown-item" routerLink="/viewAgents">View Agent</a></li>
+                            <li ngbDropdownItem><a class="dropdown-item" routerLink="/viewCommission">View
+                                    Commisssion</a></li>
+                            <li ngbDropdownItem><a class="dropdown-item" routerLink="/viewCommWithdrawal">View
+                                    Commission
                                     Withdrawl</a></li>
                         </ul>
                     </li>
@@ -27,12 +30,16 @@
                             Insurance
                         </a>
                         <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="navbarScrollingDropdown">
-                            <li ngbDropdownItem><a class="dropdown-item" href="#">View Customers</a></li>
-                            <li ngbDropdownItem><a class="dropdown-item" href="view-insurance-account-detail">Insurance
-                                    Account</a></li>
-                            <li ngbDropdownItem><a class="dropdown-item" href="viewPolicyPay">View Policy Payment</a>
+                            <li ngbDropdownItem><a class="dropdown-item" routerLink="/viewCustomer">View Customers</a>
                             </li>
-                            <li ngbDropdownItem><a class="dropdown-item" href="viewPolicyClaim">View Policy Claim</a>
+                            <li ngbDropdownItem><a class="dropdown-item"
+                                    routerLink="/view-insurance-account-detail">Insurance
+                                    Account</a></li>
+                            <li ngbDropdownItem><a class="dropdown-item" routerLink="/viewPolicyPay">View Policy
+                                    Payment</a>
+                            </li>
+                            <li ngbDropdownItem><a class="dropdown-item" routerLink="/viewPolicyClaim">View Policy
+                                    Claim</a>
                             </li>
                         </ul>
                     </li>
@@ -43,7 +50,8 @@
                             Queries
                         </a>
                         <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="navbarScrollingDropdown">
-                            <li ngbDropdownItem><a class="dropdown-item" href="viewFeedback">View Feedback</a></li>
+                            <li ngbDropdownItem><a class="dropdown-item" routerLink="/viewFeedback">View Feedback</a>
+                            </li>
 
                         </ul>
                     </li>
@@ -54,17 +62,21 @@
                             Insurance Type
                         </a>
                         <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="navbarScrollingDropdown">
-                            <li ngbDropdownItem><a class="dropdown-item" href="addInsuranceType">Add Insurance Type</a>
+                            <li ngbDropdownItem><a class="dropdown-item" routerLink="/addInsuranceType">Add Insurance
+                                    Type</a>
                             </li>
-                            <li ngbDropdownItem><a class="dropdown-item" href="insuranceType">View Insurance Type</a>
+                            <li ngbDropdownItem><a class="dropdown-item" routerLink="/insuranceType">View Insurance
+                                    Type</a>
                             </li>
-                            <li ngbDropdownItem><a class="dropdown-item" href="addInsuranceScheme">Add Insurance
+                            <li ngbDropdownItem><a class="dropdown-item" routerLink="/addInsuranceScheme">Add Insurance
                                     Scheme</a></li>
-                            <li ngbDropdownItem><a class="dropdown-item" href="viewInsuranceScheme">View Insurance
+                            <li ngbDropdownItem><a class="dropdown-item" routerLink="/viewInsuranceScheme">View
+                                    Insurance
                                     Scheme</a></li>
-                            <li ngbDropdownItem><a class="dropdown-item" href="addInsurancePlan">Add Insurance Plan</a>
+                            <li ngbDropdownItem><a class="dropdown-item" routerLink="/addInsurancePlan">Add Insurance
+                                    Plan</a>
                             </li>
-                            <li ngbDropdownItem><a class="dropdown-item" href="viewInsurancePlan">View Insurance
+                            <li ngbDropdownItem><a class="dropdown-item" routerLink="/viewInsurancePlan">View Insurance
                                     Plan</a></li>
                         </ul>
                     </li>
@@ -75,13 +87,14 @@
                             Settings
                         </a>
                         <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="navbarScrollingDropdown">
-                            <li ngbDropdownItem><a class="dropdown-item" href="taxSetting">Tax Settings</a></li>
-                            <li ngbDropdownItem><a class="dropdown-item" href="insuranceSetting">Insurance Settings</a>
+                            <li ngbDropdownItem><a class="dropdown-item" routerLink="/taxSetting">Tax Settings</a></li>
+                            <li ngbDropdownItem><a class="dropdown-item" routerLink="/insuranceSetting">Insurance
+                                    Settings</a>
                             </li>
-                            <li ngbDropdownItem><a class="dropdown-item" href="addCity">Add City</a></li>
-                            <li ngbDropdownItem><a class="dropdown-item" href="viewCity">View City</a></li>
-                            <li ngbDropdownItem><a class="dropdown-item" href="addState">Add State</a></li>
-                            <li ngbDropdownItem><a class="dropdown-item" href="viewState">View State</a></li>
+                            <li ngbDropdownItem><a class="dropdown-item" routerLink="/addCity">Add City</a></li>
+                            <li ngbDropdownItem><a class="dropdown-item" routerLink="/viewCIty">View City</a></li>
+                            <li ngbDropdownItem><a class="dropdown-item" routerLink="/addState">Add State</a></li>
+                            <li ngbDropdownItem><a class="dropdown-item" routerLink="/viewState">View State</a></li>
                         </ul>
                     </li>
 
@@ -93,14 +106,15 @@
                         <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="navbarScrollingDropdown">
                             <li ngbDropdownItem><a class="dropdown-item" href="#">Profile</a></li>
                             <li ngbDropdownItem><a class="dropdown-item" href="#">Change Password</a></li>
-                            <li ngbDropdownItem><a class="dropdown-item" href="empRegistration">Add Employee</a></li>
-                            <li ngbDropdownItem><a class="dropdown-item" href="empRecords">View Employee</a></li>
+                            <li ngbDropdownItem><a class="dropdown-item" routerLink="/empRegistration">Add Employee</a>
+                            </li>
+                            <li ngbDropdownItem><a class="dropdown-item" routerLink="/empRecords">View Employee</a></li>
                         </ul>
                     </li>
 
                     <li class="nav- " style="margin-left: 70%;">
                         <button class="btn btn-danger">
-                            <a class="nav-link active" routerLink="#">Logout</a></button>
+                            <a class="nav-link active" routerLink="/app-home">Logout</a></button>
                     </li>
                 </ul>
             </div>
@@ -116,7 +130,7 @@
             <div class="card-body">
                 <h5 class="card-title">Agent</h5>
                 <p>No of records - {{agentRecords}}</p>
-                <a routerLink="#" class="fa fa-eye" style="color:red; text-decoration: none;">View</a>
+                <a routerLink="/viewAgents" class="fa fa-eye" style="color:red; text-decoration: none;">View</a>
             </div>
         </div>
 
@@ -125,7 +139,7 @@
             <div class="card-body">
                 <h5 class="card-title">Employee</h5>
                 <p>No of records - {{employeeRecords}}</p>
-                <a routerLink="#" class="fa fa-eye" style="color:red; text-decoration: none;">View</a>
+                <a routerLink="/empRecords" class="fa fa-eye" style="color:red; text-decoration: none;">View</a>
             </div>
         </div>
 
@@ -156,7 +170,7 @@
             <div class="card-body">
                 <h5 class="card-title">Insurance Type</h5>
                 <p>No of records - {{insuranceTypeRecords}}</p>
-                <a href="insuranceType" class="fa fa-eye" style="color:red; text-decoration: none;">View</a>
+                <a routerLink="/insuranceType" class="fa fa-eye" style="color:red; text-decoration: none;">View</a>
             </div>
         </div>
 
@@ -166,7 +180,7 @@
             <div class="card-body">
                 <h5 class="card-title">Insurance Plan</h5>
                 <p>No of records - {{insurancePlanRecords}}</p>
-                <a routerLink="#" class="fa fa-eye" style="color:red; text-decoration: none;">View</a>
+                <a routerLink="/viewInsurancePlan" class="fa fa-eye" style="color:red; text-decoration: none;">View</a>
             </div>
         </div>
         <br>
@@ -176,7 +190,8 @@
             <div class="card-body">
                 <h5 class="card-title">Insurance Account</h5>
                 <p>No of records - {{insuranceAccountRecords}}</p>
-                <a routerLink="#" class="fa fa-eye" style="color:red; text-decoration: none;">View</a>
+                <a routerLink="/view-insurance-account-detail" class="fa fa-eye"
+                    style="color:red; text-decoration: none;">View</a>
             </div>
         </div>
 
@@ -186,7 +201,7 @@
             <div class="card-body">
                 <h5 class="card-title">Policy Payment</h5>
                 <p>No of records - {{policyPaymentRecords}}</p>
-                <a href="viewPolicyPay" class="fa fa-eye" style="color:red; text-decoration: none;">View</a>
+                <a routerLink="/viewPolicyPay" class="fa fa-eye" style="color:red; text-decoration: none;">View</a>
             </div>
         </div>
 
@@ -197,7 +212,7 @@
             <div class="card-body">
                 <h5 class="card-title">Policy Claim</h5>
                 <p>No of records - {{policyClaimRecords}}</p>
-                <a href="viewPolicyClaim" class="fa fa-eye" style="color:red; text-decoration: none;">View</a>
+                <a routerLink="/viewPolicyClaim" class="fa fa-eye" style="color:red; text-decoration: none;">View</a>
             </div>
         </div>
         <br>
@@ -206,7 +221,7 @@
             <div class="card-body">
                 <h5 class="card-title">Commisssion</h5>
                 <p>No of records - {{commissionRecords}}</p>
-                <a routerLink="#" class="fa fa-eye" style="color:red; text-decoration: none;">View</a>
+                <a routerLink="/viewCommission" class="fa fa-eye" style="color:red; text-decoration: none;">View</a>
             </div>
         </div>
 
@@ -215,7 +230,7 @@
             <div class="card-body">
                 <h5 class="card-title">Query</h5>
                 <p>No of records - {{queryRecords}}</p>
-                <a routerLink="#" class="fa fa-eye" style="color:red; text-decoration: none;">View</a>
+                <a routerLink="/viewQueries" class="fa fa-eye" style="color:red; text-decoration: none;">View</a>
             </div>
         </div>
 
@@ -242,7 +257,8 @@
             <div class="card-body">
                 <h5 class="card-title">Insurance Scheme</h5>
                 <p>No of records - {{insuranceSchemeRecords}}</p>
-                <a href="viewInsuranceScheme" class="fa fa-eye" style="color:red; text-decoration: none;">View</a>
+                <a routerLink="/viewInsuranceScheme" class="fa fa-eye"
+                    style="color:red; text-decoration: none;">View</a>
             </div>
         </div>
     </div>

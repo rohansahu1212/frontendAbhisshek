@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-insurance-setting',
+  selector: 'insuranceSetting',
   templateUrl: './insurance-setting.component.html',
   styleUrls: ['./insurance-setting.component.css']
 })

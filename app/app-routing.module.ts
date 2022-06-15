@@ -19,6 +19,7 @@ import { CustomerRegistrationComponent } from './customer-registration/customer-
 import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashboard.component';
 import { EmployeeLoginComponent } from './employee-login/employee-login.component';
 import { EmployeeRegistrationComponent } from './employee-registration/employee-registration.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 import { HomeComponent } from './home/home.component';
 import { InsuranceAccountDetailsComponent } from './insurance-account-details/insurance-account-details.component';
 import { InsuranceSettingComponent } from './insurance-setting/insurance-setting.component';
@@ -87,7 +88,8 @@ const routes: Routes = [
   {path:'customerQueries',component:CustomerFeedbackComponent},
   {path:'insurance-account-details',component:InsuranceAccountDetailsComponent},
   {path:'policy-payment',component:PolicyPaymentComponent},
-  {path:'payment-slip',component:PaymentSlipComponent}
+  {path:'payment-slip',component:PaymentSlipComponent},
+  {path:'404Error',component:ErrorPageComponent}
 ];
 
 @NgModule({
