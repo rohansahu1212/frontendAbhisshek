@@ -56,6 +56,7 @@ const routes: Routes = [
   {path:'customer-registration',component:CustomerRegistrationComponent},
   {path:'customer-dashboard',component:CustomerDashboardComponent},
   {path:'customer-profile',component:CustomerProfileComponent},
+  {path:'customer-feedback',component:CustomerFeedbackComponent},
   {path:'view-insurance-account-detail',component:ViewInsuranceAccountDetailComponent},
   {path:'agent-dashboard',component:AgentDashboardComponent},
   {path:'employee-dashboard',component:EmployeeDashboardComponent},
