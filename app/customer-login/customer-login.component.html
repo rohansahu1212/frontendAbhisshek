@@ -6,15 +6,36 @@
             </div>
             <h1 class="text-center">Customer Login</h1>
 
-            <form (ngSubmit)="onSubmit()">
-                <label for="username">Username*</label>
-                <input type="text" name="username" [(ngModel)]="credentials.username" 
-                required class="form-control"><br>
-
-                <label for="password">Password*</label>
-                <input type="password" name="password" [(ngModel)]="credentials.password" required class="form-control">
-                <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Login</button>
-            </form>
+            <form #userForm="ngForm" (ngSubmit)="getUserFormData(userForm.value)">
+                <div class="container">
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="userId"
+                      placeholder="name@example.com"
+                      name="id"
+                      ngModel
+                    />
+                    <label for="floatingInput">User Id</label>
+                  </div>
+                  <div class="form-floating">
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="pass"
+                      placeholder="Password"
+                      name="password"
+                      ngModel
+                    />
+                    <label for="floatingPassword">Password</label>
+                  </div>
+                  <br />
+                  <br />
+            
+                  <button id="submit" class="btn btn-primary">login button</button>
+                </div>
+              </form>
         </div>
     </div>
 </div>

@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
@@ -13,7 +13,6 @@ import { EmployeeLoginComponent } from './employee-login/employee-login.componen
 import { HomeComponent } from './home/home.component';
 import { ProtectionPlanComponent } from './protection-plan/protection-plan.component';
 import { ChildPlanComponent } from './child-plan/child-plan.component';
-import { CustomerRegistrationComponent } from './customer-registration/customer-registration.component';
 import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
 import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
 import { ViewInsuranceAccountDetailComponent } from './view-insurance-account-detail/view-insurance-account-detail.component';
@@ -49,6 +48,7 @@ import { AddCityComponent } from './add-city/add-city.component';
 import { ViewCityComponent } from './view-city/view-city.component';
 import { ViewStateComponent } from './view-state/view-state.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { CustomerRegistrationComponent } from './customer-registration/customer-registration.component';
 
 
 @NgModule({
@@ -61,7 +61,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     AgentLoginComponent,
     ProtectionPlanComponent,
     ChildPlanComponent,
-    CustomerRegistrationComponent,
+   CustomerRegistrationComponent,
     CustomerDashboardComponent,
     CustomerProfileComponent,
     ViewInsuranceAccountDetailComponent,
@@ -103,7 +103,8 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

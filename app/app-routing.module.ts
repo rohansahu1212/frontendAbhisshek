@@ -56,6 +56,7 @@ const routes: Routes = [
   {path:'customer-registration',component:CustomerRegistrationComponent},
   {path:'customer-dashboard',component:CustomerDashboardComponent},
   {path:'customer-profile',component:CustomerProfileComponent},
+  {path:'customer-feedback',component:CustomerFeedbackComponent},
   {path:'view-insurance-account-detail',component:ViewInsuranceAccountDetailComponent},
   {path:'agent-dashboard',component:AgentDashboardComponent},
   {path:'employee-dashboard',component:EmployeeDashboardComponent},
@@ -89,7 +90,7 @@ const routes: Routes = [
   {path:'insurance-account-details',component:InsuranceAccountDetailsComponent},
   {path:'policy-payment',component:PolicyPaymentComponent},
   {path:'payment-slip',component:PaymentSlipComponent},
-  {path:'404Error',component:ErrorPageComponent}
+  {path:'**',component:ErrorPageComponent}
 ];
 
 @NgModule({
