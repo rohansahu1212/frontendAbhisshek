@@ -15,6 +15,7 @@ export class CustomerFeedbackComponent implements OnInit {
     console.log(data);
     this.service.sendFeedback(data).subscribe(resp=>{
       console.log(resp);
+      alert("feed back send successfully");
     });
   }
 }
