@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CustomerService } from '../services/services/customer.service';
 
 @Component({
   selector: 'viewCustomer',
@@ -15,9 +16,25 @@ export class ViewCustomerForAgentComponent implements OnInit {
   nominee:string = "";
   nomineeRelation = "";
   status:string="";
-  constructor() { }
+  customers: any[] = [];
+
+  constructor(private customerService: CustomerService) {
+    this.getAllCustomers()
+   }
 
   ngOnInit(): void {
   }
-
+  getAllCustomers() {
+    this.customerService.getCustomers().subscribe(data => {
+      console.log(data)
+      data.map(el => {
+        if (el.status) {
+          el.status = 'active'
+        } if (!el.status) {
+          el.status = 'inactive'
+        }
+        this.customers.push(el)
+      })
+    })
+  }
 }

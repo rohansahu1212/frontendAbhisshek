@@ -6,4 +6,9 @@ import { Injectable } from '@angular/core';
 export class EmployeeService {
 
   constructor() { }
+
+  addAgentData(data:any){
+    console.log("Hello")
+    console.log(data);
+  }
 }

@@ -10,7 +10,7 @@
                             Account
                         </a>
                         <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="navbarScrollingDropdown">
-                            <li ngbDropdownItem><a class="dropdown-item" href="#">Profile</a></li>
+                            <li ngbDropdownItem><a class="dropdown-item" routerLink="/agentProfile">Profile</a></li>
                             <li ngbDropdownItem><a class="dropdown-item" href="#">Change Password</a></li>
                         </ul>
                     </li>
@@ -58,7 +58,7 @@
         <h3 style="color: black;">{{username}}</h3>
 
         <div class="card" style="width: 18rem; margin: 10px; display: inline-block;">
-            <a class="card-block stretched-link text-decoration-none" routerLink="/admin-login">
+            <a class="card-block stretched-link text-decoration-none" routerLink="/agentProfile">
                 <img class="card-img-top" src="assets/agentProfile.png" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">Profile</h5>

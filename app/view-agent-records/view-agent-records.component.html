@@ -15,15 +15,14 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody *ngFor="let agent of agents">
                     <tr>
-                        <td [(ngModel)]="agentName"></td>
-                        <td [(ngModel)]="agentCode"></td>
-                        <td [(ngModel)]="address"></td>
-                        <td [(ngModel)]="email_id"></td>
-                        <td [(ngModel)]="qualification"></td>
-                        <td [(ngModel)]="status"></td>
-                        <td [(ngModel)]="action"></td>
+                        <td>{{agent.name}}</td>
+                        <td>{{agent.id}}</td>
+                        <td>{{agent.address}}</td>
+                        <td>{{agent.email}}</td>
+                        <td>{{agent.qualification}}</td>
+                        <td>{{agent.status}}</td>
                     </tr>
                 </tbody>
             </table>

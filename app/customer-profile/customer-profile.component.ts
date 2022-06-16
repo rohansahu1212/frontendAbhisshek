@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CustomerService } from '../services/services/customer.service';
+import { LoginService } from '../services/services/login.service';
 
 @Component({
   selector: 'customer-profile',
@@ -7,20 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerProfileComponent implements OnInit {
   title:string="PROFILE";
-  cust_name:string="Abhi";
-  dob:string="";
-  loginId:string="";
-  password:string="";
-  address:string="";
-  email:string="";
-  state:string="";
-  city:string="";
-  mobile:string="";
-  nominee:string="";
-  nomineeRelation:string="";
-  constructor() { }
+  data:any;
+  constructor(private service:CustomerService) {
+   
+   }
 
   ngOnInit(): void {
+    this.service.userProfile().subscribe((result)=>{
+      this.data = result;
+      localStorage.setItem('userName',this.data.name)
+      console.log(result);
+    });
   }
 
 }

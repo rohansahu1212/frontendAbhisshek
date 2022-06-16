@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { EmployeeService } from 'src/app/services/services/employee.service';
 
 @Component({
   selector: 'agentRegistration',
@@ -9,34 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgentRegistrationComponent implements OnInit {
   title:string="AGENT REGISTRATION";
-  agent_name:string="";
-  agent_code:string="";
-  password:string="";
-  confirmPassword:string="";
-  address:string="";
-  email:string="";
-  qualification:string="";
-  status:string="";
 
-  constructor() { }
-
+  constructor(private service:EmployeeService) { }
+  exform:any;
   ngOnInit(): void {
+    this.exform=new FormGroup({
+      'name':new FormControl(null,Validators.required),
+      'password':new FormControl(null,Validators.required),
+      'address':new FormControl(null,Validators.required),
+      'email':new FormControl(null,[Validators.required,Validators.email]),
+      'qualification':new FormControl(null,Validators.required)
+    });
   }
 
-  onSubmit()
-  {
-    let data={
-      "agent_name":this.agent_name,
-      "agent_code":this.agent_code,
-      "password":this.password,
-      "confirmPassword":this.confirmPassword,
-      "address":this.address,
-      "email":this.email,
-      "qualification":this.qualification,
-      "status":this.status,
-    }
-
+  addAgentData(){
+    console.log("Hello")
+    this.service.addAgentData(this.exform.value)
   }
-
 }
 

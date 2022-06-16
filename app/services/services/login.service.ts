@@ -14,4 +14,12 @@ export class LoginService {
   loginUser(data: any) {
     return this.http.post(this.url, data);
   }
+
+  isLoggedIn(){
+   let token = localStorage.getItem('token')
+    if(token =='' && token == null){
+      return false;
+    }
+    return true;
+  }
 }

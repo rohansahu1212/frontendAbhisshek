@@ -9,6 +9,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AgentDashboardComponent } from './agent-dashboard/agent-dashboard.component';
 import { AgentLoginComponent } from './agent-login/agent-login.component';
+import { AgentProfileComponent } from './agent-profile/agent-profile.component';
 import { AgentRegistrationComponent } from './agent-registration/agent-registration/agent-registration.component';
 import { ChildPlanComponent } from './child-plan/child-plan.component';
 import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
@@ -90,6 +91,7 @@ const routes: Routes = [
   {path:'insurance-account-details',component:InsuranceAccountDetailsComponent},
   {path:'policy-payment',component:PolicyPaymentComponent},
   {path:'payment-slip',component:PaymentSlipComponent},
+  {path:'agentProfile',component:AgentProfileComponent},
   {path:'**',component:ErrorPageComponent}
 ];
 

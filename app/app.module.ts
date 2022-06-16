@@ -49,6 +49,8 @@ import { ViewCityComponent } from './view-city/view-city.component';
 import { ViewStateComponent } from './view-state/view-state.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { CustomerRegistrationComponent } from './customer-registration/customer-registration.component';
+import { AgentProfileComponent } from './agent-profile/agent-profile.component';
+import { EmployeeProfileComponent } from './employee-profile/employee-profile.component';
 
 
 @NgModule({
@@ -96,7 +98,9 @@ import { CustomerRegistrationComponent } from './customer-registration/customer-
     AddCityComponent,
     ViewCityComponent,
     ViewStateComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    AgentProfileComponent,
+    EmployeeProfileComponent
   ],
   imports: [
     BrowserModule,
