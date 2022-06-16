@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmployeeService } from '../services/services/employee.service';
 
 @Component({
   selector: 'empRecords',
@@ -7,14 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewEmployeeRecordsComponent implements OnInit {
 title:string="View Employee Records"
-empType:string=""
-empName:string=""
-login_id:string=""
-password:string=""
-status:string=""
-  constructor() { }
+employees : any[] = []
+  constructor(private service:EmployeeService) {
+    this.getEmployees()
+   }
 
   ngOnInit(): void {
   }
 
+  getEmployees() {
+    this.service.getEmployees().subscribe(data => {
+      console.log(data)
+      data.map(el => {
+        if (el.status) {
+          el.status = 'active'
+        } if (!el.status) {
+          el.status = 'inactive'
+        }
+        this.employees.push(el)
+      })
+    })
+  }
 }

@@ -32,4 +32,12 @@ export class AgentService {
     console.log(url);
     return this.http.get(url,{headers:httpHeaders});
   }
+
+  addAgentData(data:any){
+    let url = "http://localhost:8080/api/v1/agent/addAgent";
+    const httpHeaders = new HttpHeaders({
+      "Authorization":"Bearer "+localStorage.getItem("token") 
+    });
+    return this.http.post(url,data,{headers:httpHeaders});
+  }
 }

@@ -14,14 +14,14 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody *ngFor="let feed of feedbacks" >
                     <tr>
-                        <td [(ngModel)]="customerName"></td>
-                        <td [(ngModel)]="Qtitle"></td>
-                        <td [(ngModel)]="message"></td>
-                        <td [(ngModel)]="contactDate"></td>
-                        <td [(ngModel)]="reply"></td>
-                        <td [(ngModel)]="action"><a href="edit">Edit/</a><br><a href="delete">Delete</a></td>
+                        <td >{{feed.customerName}}</td>
+                        <td >{{feed.title}}</td>
+                        <td >{{feed.message}}</td>
+                        <td >{{feed.date}}</td>
+                        <td >{{feed.reply}}</td>
+                        <td ><a href="edit">Edit/</a><br><a href="delete">Delete</a></td>
                     </tr>
                 </tbody>
             </table>

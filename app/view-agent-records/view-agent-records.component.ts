@@ -7,13 +7,7 @@ import { AgentService } from '../services/services/agent.service';
 })
 export class ViewAgentRecordsComponent implements OnInit {
   title: string = "VIEW AGENT RECORDS"
-  agentName: string = "";
-  agentCode: string = "";
-  address: string = "";
-  email: string = "";
-  qualification: string = "";
-  status: string = "";
-  action: string = "";
+
   agents: any[] = []
   
   constructor(private service: AgentService) {
@@ -22,6 +16,7 @@ export class ViewAgentRecordsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   getAgents() {
     this.service.getAgents().subscribe(data => {
       console.log(data)

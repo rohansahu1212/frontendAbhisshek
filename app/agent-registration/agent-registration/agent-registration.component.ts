@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { EmployeeService } from 'src/app/services/services/employee.service';
+import { Router } from '@angular/router';
+import { AgentService } from 'src/app/services/services/agent.service';
 
 @Component({
   selector: 'agentRegistration',
@@ -9,9 +10,10 @@ import { EmployeeService } from 'src/app/services/services/employee.service';
 })
 export class AgentRegistrationComponent implements OnInit {
   title:string="AGENT REGISTRATION";
-
-  constructor(private service:EmployeeService) { }
+  id:any;
+  constructor(private service:AgentService, private route:Router) { }
   exform:any;
+
   ngOnInit(): void {
     this.exform=new FormGroup({
       'name':new FormControl(null,Validators.required),
@@ -23,8 +25,16 @@ export class AgentRegistrationComponent implements OnInit {
   }
 
   addAgentData(){
-    console.log("Hello")
-    this.service.addAgentData(this.exform.value)
+    this.service.addAgentData(this.exform.value).subscribe(result=>{
+      this.id = result;
+      alert("This is your Auto-Generated Agent-Id: "+this.id.id);
+      console.log(result);
+      setTimeout(()=>{
+        this.route.navigate(['/employee-dashboard']);
+      },5000)
+    })
+    
+    this.exform.reset();
   }
 }
 

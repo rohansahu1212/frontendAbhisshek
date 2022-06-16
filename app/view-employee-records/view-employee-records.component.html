@@ -14,13 +14,13 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody *ngFor="let employee of employees">
                     <tr>
-                        <td [(ngModel)]="empType"></td>
-                        <td [(ngModel)]="empName"></td>
-                        <td [(ngModel)]="login_id"></td>
-                        <td [(ngModel)]="password"></td>
-                        <td [(ngModel)]="status"></td>
+                        <td >{{employee.type}}</td>
+                        <td >{{employee.name}}</td>
+                        <td >{{employee.id}}</td>
+                        <td >{{employee.password}}</td>
+                        <td >{{employee.status}}</td>
                         <td><a href="edit">Edit/</a><br><a href="delete">Delete</a></td>
                     </tr>
                 </tbody>

@@ -1,3 +1,4 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,10 +6,23 @@ import { Injectable } from '@angular/core';
 })
 export class EmployeeService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
-  addAgentData(data:any){
-    console.log("Hello")
-    console.log(data);
+  getEmployees() {
+    let url = "http://localhost:8080/api/v1/employee"
+    let token = "Bearer " + localStorage.getItem("token")
+    return this.http.get<any[]>(url, {
+      headers: new HttpHeaders({
+        'Authorization': token
+      })
+    })
+  }
+
+  addEmployeeData(data:any){
+    let url = "http://localhost:8080/api/v1/employee/addEmployee";
+    const httpHeaders = new HttpHeaders({
+      "Authorization":"Bearer "+localStorage.getItem("token") 
+    });
+    return this.http.post(url,data,{headers:httpHeaders});
   }
 }
