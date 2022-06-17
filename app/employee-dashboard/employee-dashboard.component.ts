@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'employee-dashboard',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employee-dashboard.component.css']
 })
 export class EmployeeDashboardComponent implements OnInit {
-  username:string="employee";
+  username:any;
   agentRecords:number=4;
   employeeRecords:number=3;
   customerRecords:number=4;
@@ -22,9 +23,15 @@ export class EmployeeDashboardComponent implements OnInit {
   insuranceSchemeRecords:number=11;
   cityRecords:number=5;
 
-  constructor() { }
+  constructor(private route:Router) { }
 
   ngOnInit(): void {
+    this.username = localStorage.getItem('userName')
   }
-  
+
+  logout(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('userId');
+    this.route.navigate(['/app-home']);
+  }
 }

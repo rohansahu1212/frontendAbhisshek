@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../services/services/login.service';
 
-
-
 @Component({
   selector: 'customer-login',
   templateUrl: './customer-login.component.html',
