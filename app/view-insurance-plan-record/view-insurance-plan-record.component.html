@@ -20,21 +20,23 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>
+                
+                <tbody *ngFor="let plan of plans">
                     <tr>
-                        <td [(ngModel)]="insuranceType"></td>
-                        <td [(ngModel)]="insuranceScheme"></td>
-                        <td [(ngModel)]="policyMin"></td>
-                        <td [(ngModel)]="policyMax"></td>
-                        <td [(ngModel)]="minAge"></td>
-                        <td [(ngModel)]="maxAge"></td>
-                        <td [(ngModel)]="sumMin"></td>
-                        <td [(ngModel)]="sumMax"></td>
-                        <td [(ngModel)]="profitRatio"></td>
-                        <td [(ngModel)]="status"></td>
-                        <td><a href="edit">Edit/</a><br><a href="delete">Delete</a></td>
+                      <td>{{ plan.id }}</td>
+                      <td>{{ plan.name }}</td>
+                      <td>{{ plan.policyTermMin}}</td>
+                      <td>{{ plan.policyTermMax}}</td>
+                      <td>{{ plan.minAge}}</td>
+                      <td>{{ plan.maxAge}}</td>
+                      <td>{{ plan.sumAssuredMin}}</td>
+                      <td>{{ plan.sumAssuredMax}}</td>
+                      <td>{{ plan.profitRatio}}</td>
+                      <td>{{ plan.status}}</td>
+                      <td>{{ plan.deleted}}</td>
+                  
                     </tr>
-                </tbody>
+                  </tbody>
             </table>
         </form>
     </div>

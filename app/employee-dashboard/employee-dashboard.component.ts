@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, Routes } from '@angular/router';
+import { EmployeeService } from '../services/services/employee.service';
 
 @Component({
   selector: 'employee-dashboard',
@@ -8,6 +9,7 @@ import { Router, Routes } from '@angular/router';
 })
 export class EmployeeDashboardComponent implements OnInit {
   username:any;
+  data:any;
   agentRecords:number=4;
   employeeRecords:number=3;
   customerRecords:number=4;
@@ -23,12 +25,17 @@ export class EmployeeDashboardComponent implements OnInit {
   insuranceSchemeRecords:number=11;
   cityRecords:number=5;
 
-  constructor(private route:Router) { }
+  constructor(private route:Router,private service:EmployeeService) { }
 
   ngOnInit(): void {
     if(localStorage.getItem("token")==null)
-      this.route.navigate(['/employee-login']);
+      this.route.navigate(['/employee-login'])
 
+    this.service.userProfile().subscribe(resp=>{
+      console.log(resp)
+      this.data=resp
+      this.username=this.data.name
+    })
   }
  
   

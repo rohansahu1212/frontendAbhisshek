@@ -47,4 +47,12 @@ export class AdminService {
     });
     return this.http.post(url, data, { headers: httpHeaders });
   }
+  getInsurnacePlanList(){
+    let url="http://localhost:8080/api/v1/insurance/insurancePlan"
+    const httpHeaders = new HttpHeaders({
+      "Authorization": "Bearer " + localStorage.getItem("token")
+    });
+    return this.http.get<any[]>(url,  { headers: httpHeaders });
+
+  }
 }

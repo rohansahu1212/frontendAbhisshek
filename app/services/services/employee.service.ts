@@ -17,6 +17,15 @@ export class EmployeeService {
       })
     })
   }
+  
+  userProfile() {
+    let url = "http://localhost:8080/api/v1/employee/" + localStorage.getItem('userId')
+    const httpHeaders = new HttpHeaders({
+      "Authorization": "Bearer " + localStorage.getItem("token")
+    });
+    console.log(url);
+    return this.http.get<any[]>(url, { headers: httpHeaders })
+  }
 
   addEmployeeData(data:any){
     let url = "http://localhost:8080/api/v1/employee/addEmployee";

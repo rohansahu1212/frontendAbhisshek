@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from '../services/services/admin.service';
 
 @Component({
   selector: 'viewInsurancePlan',
@@ -7,19 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewInsurancePlanRecordComponent implements OnInit {
 title:string="View Insurance Plan Records"
-insuranceType:string=""
-insuranceScheme:string=""
-policyMin:number=0
-policyMax:number=0
-minAge:number=0
-maxAge:number=0
-sumMin:number=0
-sumMax:number=0
-profitRatio:number=0
-status:string=""
-  constructor() { }
+plans:any[]=[]
+  constructor(private service:AdminService) {
+
+
+
+   }
 
   ngOnInit(): void {
+
+    this.service.getInsurnacePlanList().subscribe(data => {
+      console.log(data)
+      data.map(el => {
+        if (el.status) {
+          el.status = 'active'
+        } if (!el.status) {
+          el.status = 'inactive'
+        }
+      
+        this.plans.push(el)
+      })
+    })
+    
   }
 
 }
