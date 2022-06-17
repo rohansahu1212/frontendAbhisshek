@@ -21,5 +21,4 @@ export class CustomerProfileComponent implements OnInit {
       console.log(result);
     });
   }
-
 }

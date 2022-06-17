@@ -25,7 +25,7 @@ export class AdminService {
   }
 
   userProfile() {
-    let url = "http://localhost:8080/api/v1/customer/" + localStorage.getItem('userId')
+    let url = "http://localhost:8080/api/v1/employee/" + localStorage.getItem('userId')
     const httpHeaders = new HttpHeaders({
       "Authorization": "Bearer " + localStorage.getItem("token")
     });

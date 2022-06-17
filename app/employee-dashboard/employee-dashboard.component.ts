@@ -27,7 +27,8 @@ export class EmployeeDashboardComponent implements OnInit {
 
   ngOnInit(): void {
     if(localStorage.getItem("token")==null)
-      this.route.navigate(['/employee-login'])
+      this.route.navigate(['/employee-login']);
+
   }
  
   

@@ -15,6 +15,7 @@ username:any;
     if(localStorage.getItem("token")==null)
       this.route.navigate(['/customer-login'])
   }
+  
   logout(){
     localStorage.removeItem("token")
     localStorage.removeItem("userId")
