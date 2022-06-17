@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'admin-dashboard',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminDashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:Router) { }
   username:string="admin";
   agentRecords:number=4;
   employeeRecords:number=3;
@@ -25,6 +26,14 @@ export class AdminDashboardComponent implements OnInit {
   cityRecords:number=5;
   
   ngOnInit(): void {
+    if(localStorage.getItem("token")==null)
+      this.route.navigate(['/admin-login'])
   }
+  logout(){
+    localStorage.removeItem("token")
+    localStorage.removeItem("userId")
+    localStorage.removeItem("userName")
+    this.route.navigate(['/'])
 
+  }
 }

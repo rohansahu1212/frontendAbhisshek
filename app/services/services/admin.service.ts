@@ -40,4 +40,11 @@ export class AdminService {
     });
     return this.http.post(url, data, { headers: httpHeaders });
   }
+  addInsurancePlan(id:number,data:any){
+    let url= "http://localhost:8080/api/v1/insurance/"+id+"/addInsurancePlan"
+    const httpHeaders = new HttpHeaders({
+      "Authorization": "Bearer " + localStorage.getItem("token")
+    });
+    return this.http.post(url, data, { headers: httpHeaders });
+  }
 }

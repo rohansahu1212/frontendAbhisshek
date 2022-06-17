@@ -10,62 +10,67 @@
             <td scope="col"><input type="text" name="id" class="form-control" [(ngModel)]="id"></td>
           </tr>
           <tr>
-            <td scope="col"><strong>Insurance Scheme:</strong></td>
-            <td><input type="text" name="insuranceScheme" class="form-control"
-                 max="2004-06-11" value="" /></td>
+            <td scope="col"><strong>Name</strong></td>
+            <td><input type="text" name="name" class="form-control"
+                 max="2004-06-11" value="" ngModel/></td>
+          </tr>
+          <tr>
+            <td scope="col"><strong>New Registration scheme</strong></td>
+            <td><input type="text" name="description" class="form-control"
+                 max="2004-06-11" value="" ngModel/></td>
+          </tr>
+          <tr>
+            <td scope="col"><strong>New Registration Commission</strong></td>
+            <td><input type="text" class="form-control" name="newRegistrationCommission"
+                 value="" ngModel /></td>
+          </tr>
+          <tr>
+            <td scope="col"><strong>Installment Payment Commission</strong></td>
+            <td><input type="text" class="form-control" name="installmentPaymentCommission"
+                 value="" ngModel  /></td>
+          </tr>
+    
+
+    
+          <tr>
+            <td scope="col"><strong>Policy Term Minimum</strong></td>
+            <td><input type="text" class="form-control" name="policyTermMin"
+                 value="" ngModel  /></td>
+          </tr>
+          <tr>
+            <td scope="col"><strong>Policy Term Maximum</strong></td>
+            <td><input type="text" class="form-control" name= "policyTermMax"
+                 value=""  ngModel /></td>
+          </tr>
+     
+          <tr>
+            <td scope="col"><strong>Age Minimum</strong></td>
+            <td><input type="text" class="form-control" name="minAge"
+                 value="" ngModel  /></td>
+          </tr>
+          <tr>
+            <td scope="col"><strong>Age Maximum</strong></td>
+            <td><input type="text" class="form-control" name="maxAge"
+                 value=""  ngModel/></td>
           </tr>
 
+     
           <tr>
-            <td scope="col"><strong>Policy Term</strong></td>
-            <td><input type="text" class="form-control"
-                 name="policyTerm" value=""  /></td>
+            <td scope="col"><strong>Minimum Total investment Amount</strong></td>
+            <td><input type="text" class="form-control" name="sumAssuredMin"
+                 value=""  ngModel /></td>
           </tr>
           <tr>
-            <td scope="col"><strong>Minimum</strong></td>
-            <td><input type="text" class="form-control" name="minimumTerm"
-                 value=""   /></td>
+            <td scope="col"><strong>Maximum Total investment Amount</strong></td>
+            <td><input type="text" class="form-control" name="sumAssuredMax"
+                 value="" ngModel /></td>
           </tr>
           <tr>
-            <td scope="col"><strong>Maximum</strong></td>
-            <td><input type="text" class="form-control" name="maximumTerm"
-                 value=""   /></td>
-          </tr>
-          <tr>
-            <td scope="col"><strong>Age</strong></td>
-            <td><input type="text" class="form-control" name="age"
-                 value=""  /></td>
-          </tr>
-          <tr>
-            <td scope="col"><strong>Minimum</strong></td>
-            <td><input type="text" class="form-control" name="minimumAge"
-                 value=""  /></td>
-          </tr>
-          <tr>
-            <td scope="col"><strong>Maximum</strong></td>
-            <td><input type="text" class="form-control" name="maximumTerm"
-                 value=""  /></td>
-          </tr>
-
-          <tr>
-            <td scope="col"><strong>Total investment Amount</strong></td>
-            <td><input type="text" class="form-control" name="age"
-                 value=""  /></td>
-          </tr>
-          <tr>
-            <td scope="col"><strong>Minimum</strong></td>
-            <td><input type="text" class="form-control" name="minimumInvestment"
-                 value=""   /></td>
-          </tr>
-          <tr>
-            <td scope="col"><strong>Maximum</strong></td>
-            <td><input type="text" class="form-control" name="maximumInvestment"
-                 value=""  /></td>
-          </tr>
-          <tr>
-            <td scope="col"><strong>Profit Ratio:</strong></td>
+            <td scope="col"><strong>Profit Ratio</strong></td>
             <td><input type="text" class="form-control" name="profitRatio"
-                 value=""  /></td>
+                 value="" ngModel /></td>
           </tr>
+  
 
        
           <tr>
@@ -75,4 +80,4 @@
       </table>
     </form>
   </div>
- <h1>{{id}}</h1>
+
