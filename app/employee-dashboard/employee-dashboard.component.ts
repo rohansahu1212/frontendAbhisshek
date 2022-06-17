@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, Routes } from '@angular/router';
 
 @Component({
   selector: 'employee-dashboard',
@@ -26,12 +26,16 @@ export class EmployeeDashboardComponent implements OnInit {
   constructor(private route:Router) { }
 
   ngOnInit(): void {
-    this.username = localStorage.getItem('userName')
+    if(localStorage.getItem("token")==null)
+      this.route.navigate(['/employee-login'])
   }
-
+ 
+  
   logout(){
-    localStorage.removeItem('token');
-    localStorage.removeItem('userId');
-    this.route.navigate(['/app-home']);
+    localStorage.removeItem("token")
+    localStorage.removeItem("userId")
+    localStorage.removeItem("userName")
+    this.route.navigate(['/'])
+
   }
 }
