@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AgentService } from '../services/services/agent.service';
 
 @Component({
   selector: 'agent-dashboard',
@@ -9,11 +10,19 @@ import { Router } from '@angular/router';
 export class AgentDashboardComponent implements OnInit {
 
 username:any;
-
-  constructor(private route:Router) { }
+data:any
+  constructor(private route:Router,private service:AgentService) { }
 
   ngOnInit(): void {
-    this.username = localStorage.getItem('userName');
+
+    if(localStorage.getItem("token")==null)
+    this.route.navigate(['/agent-login'])
+
+    this.service.userProfile().subscribe(resp=>{
+      console.log(resp)
+      this.data=resp
+      this.username=this.data.name
+    })
   }
   logout(){
     localStorage.removeItem('token');

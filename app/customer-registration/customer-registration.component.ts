@@ -38,7 +38,7 @@ export class CustomerRegistrationComponent implements OnInit {
       alert("This is your Auto-Generated User-Id: "+this.id.id);
       setTimeout(()=>{
         this.route.navigate(['/customer-login']);
-      },5000)
+      },3000)
     })
     this.exform.reset();
   }
