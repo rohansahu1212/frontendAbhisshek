@@ -27,6 +27,7 @@ data:any
       //this.username = localStorage.getItem('userName')
 
   }
+  
   logout(){
     localStorage.removeItem("token")
     localStorage.removeItem("userId")
