@@ -25,7 +25,7 @@ export class AdminService {
   }
 
   userProfile() {
-    let url = "http://localhost:8080/api/v1/customer/" + localStorage.getItem('userId')
+    let url = "http://localhost:8080/api/v1/employee/" + localStorage.getItem('userId')
     const httpHeaders = new HttpHeaders({
       "Authorization": "Bearer " + localStorage.getItem("token")
     });
@@ -49,6 +49,14 @@ export class AdminService {
   }
   getInsurnacePlanList(){
     let url="http://localhost:8080/api/v1/insurance/insurancePlan"
+    const httpHeaders = new HttpHeaders({
+      "Authorization": "Bearer " + localStorage.getItem("token")
+    });
+    return this.http.get<any[]>(url,  { headers: httpHeaders });
+
+  }
+  getMasterTransaction(){
+    let url="http://localhost:8080/api/v1/masterTransaction/allTransaction"
     const httpHeaders = new HttpHeaders({
       "Authorization": "Bearer " + localStorage.getItem("token")
     });
