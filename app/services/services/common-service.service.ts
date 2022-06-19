@@ -44,4 +44,15 @@ export class CommonServiceService {
       })
     })
   }
+
+  getPolicyRecord(){
+    let token = "Bearer " + localStorage.getItem("token");
+    let url = "http://localhost:8080/api/v1/policy/all";
+    
+    return this.http.get<any[]>(url, {
+      headers: new HttpHeaders({
+         'Authorization': token
+       })
+     })
+  }
 }

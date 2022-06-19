@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonServiceService } from '../services/services/common-service.service';
 
 @Component({
   selector: 'viewPolicyClaim',
@@ -7,17 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewPolicyClaimComponent implements OnInit {
   title:string = "View Policy Claim Record"
-  customerName : string = "";
-  insuranceAccountNo: string = "";
-  withdrawalDate: string = "";
-  bankDetails:string = "";
-  withdrawalAmount:string="";
-  withdrawalStatus:string = "";
-  action = "";
 
-  constructor() { }
+  data:any[] = [];
+
+  constructor(private service:CommonServiceService) {
+
+   }
 
   ngOnInit(): void {
+    this.getPolicyRecord();
   }
 
+  getPolicyRecord(){
+    this.service.getPolicyRecord().subscribe(resp=>{
+      console.log(resp);
+      this.data = resp;
+    })
+  }
 }

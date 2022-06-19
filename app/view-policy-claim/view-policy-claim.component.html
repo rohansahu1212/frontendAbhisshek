@@ -7,23 +7,19 @@
                 <thead>
                     <tr>
                         <th>Customer Name</th>
-                        <th>Insurance Account No.</th>
-                        <th>Withdrawal Date</th>
-                        <th>Bank Details</th>
-                        <th>Withdrawal Amount</th>
-                        <th>Withdrawal Status</th>
-                        <th>Action</th>
+                        <th>Insurance Plan Name</th>
+                        <th>Created Date</th>
+                        <th>Maturity Date</th>
+                        <th>Installment Payment Type</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td [(ngModel)]="customerName"></td>
-                        <td [(ngModel)]="insuranceAccountNo"></td>
-                        <td [(ngModel)]="withdrawalDate"></td>
-                        <td [(ngModel)]="bankDetails"></td>
-                        <td [(ngModel)]="withdrawalAmount"></td>
-                        <td [(ngModel)]="withdrawalStatus"></td>
-                        <td [(ngModel)]="action"></td>
+                    <tr *ngFor="let policy of data">
+                        <td >{{policy.customerName}}</td>
+                        <td >{{policy.insurnacePlanName}}</td>
+                        <td >{{policy.createdDate}}</td>
+                        <td >{{policy.maturityDate}}</td>
+                        <td >{{policy.installmentType}}</td>
                     </tr>
                 </tbody>
             </table>
