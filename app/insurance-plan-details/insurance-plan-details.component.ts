@@ -17,8 +17,8 @@ export class InsurancePlanDetailsComponent implements OnInit {
   months: string = "";
   insurancePlanId:string="";
   installAmt: number = 0;
-  insterestAmt: string = "";
-  totalAmt: string = "";
+  insterestAmt: number =0;
+  totalAmt: number = 0;
 
   constructor(private service:InsuranceService, private activatedRoute:ActivatedRoute) { 
     this.activatedRoute.params.subscribe(params => {
@@ -42,29 +42,28 @@ export class InsurancePlanDetailsComponent implements OnInit {
   interestCalculator() {
     if (this.months.match("1 month")) {
       this.installAmt = (Number(this.amount) / 12) ;
-      this.insterestAmt = String(Number(this.amount) * this.insurancePlan.profitRatio / 100) + ".00";
-      this.totalAmt = String(Number(this.amount) + Number(this.amount) * this.insurancePlan.profitRatio/ 100) + ".00";
-      // this.buttonSubmit = this.service.isLoggedIn();
-      
+      this.insterestAmt = (Number(this.amount) * this.insurancePlan.profitRatio / 100) ;
+      this.totalAmt = (Number(this.amount) + Number(this.amount) * this.insurancePlan.profitRatio/ 100) ;
+   
     }
 
     else if (this.months.match("3 month")) {
       this.installAmt = (Number(this.amount) / 4) ;
-      this.insterestAmt = String(Number(this.amount) * this.insurancePlan.profitRatio / 100) + ".00";
-      this.totalAmt = String(Number(this.amount) + Number(this.amount) * this.insurancePlan.profitRatio / 100) + ".00";
-      // this.buttonSubmit = this.service.isLoggedIn();
+      this.insterestAmt = (Number(this.amount) * this.insurancePlan.profitRatio / 100)  ;
+      this.totalAmt =(Number(this.amount) + Number(this.amount) * this.insurancePlan.profitRatio / 100) ;
+  
     }
     else if (this.months.match("6 month")) {
       this.installAmt = (Number(this.amount) / 2) ;
-      this.insterestAmt = String(Number(this.amount) * this.insurancePlan.profitRatio / 100) + ".00";
-      this.totalAmt = String(Number(this.amount) + Number(this.amount) * this.insurancePlan.profitRatio/ 100) + ".00";
-      // this.buttonSubmit = this.service.isLoggedIn();
+      this.insterestAmt =(Number(this.amount) * this.insurancePlan.profitRatio / 100) ;
+      this.totalAmt = (Number(this.amount) + Number(this.amount) * this.insurancePlan.profitRatio/ 100) ;
+   
     }
     else if (this.months.match("1 year")) {
       this.installAmt = (Number(this.amount) / Number(this.noOfYear) * 1);
-      this.insterestAmt = String(Number(this.amount) * this.insurancePlan.profitRatio / 100) + ".00";
-      this.totalAmt = String(Number(this.amount) + Number(this.amount) * this.insurancePlan.profitRatio / 100) + ".00";
-      // this.buttonSubmit = this.service.isLoggedIn();
+      this.insterestAmt = (Number(this.amount) * this.insurancePlan.profitRatio / 100)  ;
+      this.totalAmt = (Number(this.amount) + Number(this.amount) * this.insurancePlan.profitRatio / 100);
+
     }
   }
 
@@ -77,7 +76,12 @@ export class InsurancePlanDetailsComponent implements OnInit {
     "timeSpan":this.noOfYear,
     "premiumType":this.months
   }
-  console.log(data);
 
+
+  this.service.getAddPlan(data).subscribe(resp=>{
+    console.log(resp)
+    alert("Congrats you brought the policy")
+  })
+   
   }
 }
