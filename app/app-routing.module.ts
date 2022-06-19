@@ -23,6 +23,8 @@ import { EmployeeRegistrationComponent } from './employee-registration/employee-
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { HomeComponent } from './home/home.component';
 import { InsuranceAccountDetailsComponent } from './insurance-account-details/insurance-account-details.component';
+import { InsurancePlanDetailsComponent } from './insurance-plan-details/insurance-plan-details.component';
+import { InsurancePlanListComponent } from './insurance-plan-list/insurance-plan-list.component';
 import { InsuranceSettingComponent } from './insurance-setting/insurance-setting.component';
 import { MarketingComponent } from './marketing/marketing/marketing.component';
 import { PaymentSlipComponent } from './payment-slip/payment-slip.component';
@@ -91,6 +93,10 @@ const routes: Routes = [
   {path:'insurance-account-details',component:InsuranceAccountDetailsComponent},
   {path:'policy-payment',component:PolicyPaymentComponent},
   {path:'payment-slip',component:PaymentSlipComponent},
+  ////
+  { path: 'insurance-plan/:id', component: InsurancePlanListComponent },
+  { path: 'insurance-plan-detailsss/:id', component: InsurancePlanDetailsComponent },
+  { path: 'insurance-plan-details/:id', component: InsurancePlanDetailsComponent },
   {path:'agentProfile',component:AgentProfileComponent},
   {path:'**',component:ErrorPageComponent}
 ];

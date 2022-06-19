@@ -27,14 +27,27 @@ export class ViewCustomerForAgentComponent implements OnInit {
   getAllCustomers() {
     this.customerService.getCustomers().subscribe(data => {
       console.log(data)
-      data.map(el => {
-        if (el.status) {
-          el.status = 'active'
-        } if (!el.status) {
-          el.status = 'inactive'
-        }
-        this.customers.push(el)
-      })
+      this.customers=data
     })
+  }
+  activateCustomer(id:number){
+    this.customerService.activateCustomer(id).subscribe((result)=>{
+     
+    })
+    window.location.href="viewCustomer";
+  }
+  
+  deactivateCustomer(id:number){
+    this.customerService.deactivateCustomer(id).subscribe((result)=>{
+      
+    })
+    window.location.href="viewCustomer";
+  }
+
+  deleteCustomerById(id:number){
+    this.customerService.deleteCustomerById(id).subscribe((result)=>{
+      
+    })
+    window.location.href="viewCustomer";
   }
 }

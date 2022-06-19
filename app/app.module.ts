@@ -51,6 +51,8 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { CustomerRegistrationComponent } from './customer-registration/customer-registration.component';
 import { AgentProfileComponent } from './agent-profile/agent-profile.component';
 import { EmployeeProfileComponent } from './employee-profile/employee-profile.component';
+import { InsurancePlanDetailsComponent } from './insurance-plan-details/insurance-plan-details.component';
+import { InsurancePlanListComponent } from './insurance-plan-list/insurance-plan-list.component';
 
 
 @NgModule({
@@ -100,7 +102,9 @@ import { EmployeeProfileComponent } from './employee-profile/employee-profile.co
     ViewStateComponent,
     ErrorPageComponent,
     AgentProfileComponent,
-    EmployeeProfileComponent
+    EmployeeProfileComponent,
+    InsurancePlanDetailsComponent,
+    InsurancePlanListComponent
   ],
   imports: [
     BrowserModule,

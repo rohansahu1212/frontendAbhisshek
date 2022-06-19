@@ -9,7 +9,7 @@ import { EmployeeService } from '../services/services/employee.service';
 export class ViewEmployeeRecordsComponent implements OnInit {
 title:string="View Employee Records"
 employees : any[] = []
-  constructor(private service:EmployeeService) {
+  constructor(private employeeService:EmployeeService) {
     this.getEmployees()
    }
 
@@ -17,16 +17,31 @@ employees : any[] = []
   }
 
   getEmployees() {
-    this.service.getEmployees().subscribe(data => {
+    this.employeeService.getEmployees().subscribe(data => {
       console.log(data)
-      data.map(el => {
-        if (el.status) {
-          el.status = 'active'
-        } if (!el.status) {
-          el.status = 'inactive'
-        }
-        this.employees.push(el)
-      })
+
+        this.employees=data
+    
     })
+  }
+  activateEmployee(id:number){
+    this.employeeService.activateEmployee(id).subscribe((result)=>{
+     
+    })
+    window.location.href="empRecords";
+  }
+  
+  deactivateEmployee(id:number){
+    this.employeeService.deactivateEmployee(id).subscribe((result)=>{
+      
+    })
+    window.location.href="empRecords";
+  }
+  
+  deleteEmployeeById(id:number){
+    this.employeeService.deleteEmployeeById(id).subscribe((result)=>{
+      
+    })
+    window.location.href="empRecords";
   }
 }

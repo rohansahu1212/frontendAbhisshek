@@ -24,12 +24,13 @@
                             Insurance Plans
                         </a>
                         <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="navbarScrollingDropdown">
-                            <li ngbDropdownItem><a class="dropdown-item" href="#">Protection Plans</a></li>
+                            <a ngDropDownItem *ngFor="let insuranceType of insuranceTypes" class="dropdown-item"
+              href="/insurance-plan/{{insuranceType.id}}">{{insuranceType.name}}</a>
+                            <!-- <li ngbDropdownItem><a class="dropdown-item" href="#">Protection Plans</a></li>
                             <li ngbDropdownItem><a class="dropdown-item" routerLink="/child-plan">Child Plans</a></li>
-                            <!-- <li ngbDropdownItem><hr class="dropdown-divider"></li> -->
                             <li ngbDropdownItem><a class="dropdown-item" href="#">Saving Plans</a></li>
                             <li ngbDropdownItem><a class="dropdown-item" href="#">Growth Plans</a></li>
-                            <li ngbDropdownItem><a class="dropdown-item" href="#">Group Plans</a></li>
+                            <li ngbDropdownItem><a class="dropdown-item" href="#">Group Plans</a></li> -->
                         </ul>
                     </li>
 
@@ -100,3 +101,6 @@
     </div>
     <br><br><br><br><br><br><br><br><br>
 </body>
+
+    
+        

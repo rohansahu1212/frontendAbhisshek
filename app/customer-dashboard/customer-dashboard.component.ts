@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonServiceService } from '../services/services/common-service.service';
 import { CustomerService } from '../services/services/customer.service';
 
 @Component({
@@ -8,9 +9,11 @@ import { CustomerService } from '../services/services/customer.service';
   styleUrls: ['./customer-dashboard.component.css']
 })
 export class CustomerDashboardComponent implements OnInit {
+title:string="customer page"
 username:any;
 data:any
-  constructor(private route:Router,private service:CustomerService) { }
+insuranceTypes:any[]=[]
+  constructor(private route:Router,private service:CustomerService, private insuranceService:CommonServiceService) { }
 
   ngOnInit(): void {
  
@@ -21,10 +24,14 @@ data:any
         this.data = result;
         localStorage.setItem('userName',this.data.name)
         this.username=this.data.name;
-        console.log(result);
+       // console.log(result);
+       console.log("insurnace type")
+        console.log(this.insuranceTypes)
       })
 
       //this.username = localStorage.getItem('userName')
+
+      this.getInsuranceTypes()
 
   }
   
@@ -34,5 +41,18 @@ data:any
     localStorage.removeItem("userName")
     this.route.navigate(['/'])
 
+  }
+  getInsuranceTypes() {
+    this.insuranceService.getInsuranceType().subscribe(data => {
+      console.log(data)
+      data.map(el => {
+        if (el.status) {
+          el.status = 'active'
+        } if (!el.status) {
+          el.status = 'inactive'
+        }
+        this.insuranceTypes.push(el)
+      })
+    })
   }
 }

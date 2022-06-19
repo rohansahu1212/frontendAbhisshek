@@ -128,24 +128,42 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
+                        <th>Agent id</th>
                         <th>Agent Name</th>
-                        <th>Agent Code</th>
                         <th>Address</th>
                         <th>Email-id</th>
                         <th>Qualification</th>
                         <th>Status</th>
                         <th>Action</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody *ngFor="let agent of agents">
+                    <ng-template [ngIf]="agent.deleted===false">
                     <tr>
-                        <td>{{agent.name}}</td>
                         <td>{{agent.id}}</td>
+                        <td>{{agent.name}}</td>
                         <td>{{agent.address}}</td>
                         <td>{{agent.email}}</td>
                         <td>{{agent.qualification}}</td>
-                        <td>{{agent.status}}</td>
-                    </tr>
+                        <td *ngIf="agent.status===true">Active</td>
+                        <td *ngIf="agent.status===false">Inactive</td>
+                        <td>
+                            <div *ngIf="agent.status == true">
+                                <div class="form-check form-switch" (click)="deactivateAgent(agent.id)">
+                                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked >
+                                  </div>
+                                </div>   
+                                <div *ngIf="agent.status == false">
+                                <div class="form-check form-switch" (click)="activateAgent(agent.id)">
+                                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" unchecked >
+                                  </div>
+                                </div>
+                                <!-- <a (click)="deleteAgentById(agent.id)" style="color:blue; cursor: pointer;">Delete</a> -->
+                            </td>
+                            <td>     <a (click)="deleteAgentById(agent.id)" style="color:red; cursor: pointer;">Delete</a></td>
+                        </tr>
+                           </ng-template>
                 </tbody>
             </table>
         </form>

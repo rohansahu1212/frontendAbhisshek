@@ -7,28 +7,51 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
+                        <th>Customer Id</th>
                         <th>Customer Name</th>
                         <th>DOB</th>
-                        <th>Login Id</th>
                         <th>Address</th>
+                        <th>Email</th>
                         <th>Mobile No.</th>
                         <th>Nominee</th>
                         <th>Nominee Relation</th>
                         <th>status</th>
                         <th>Documents</th>
+                        <th>Action</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
-                <tbody *ngFor="let customer of customers">
-                    <tr>
+                <tbody>
+                    <tr *ngFor = "let customer of customers">
+                        <ng-template  [ngIf]="customer.deleted===false">
+                        <td>{{customer.id}}</td>
                         <td>{{customer.name}}</td>
                         <td>{{customer.dob}}</td>
-                        <td>{{customer.id}}</td>
                         <td>{{customer.address}}</td>
+                        <td>{{customer.email}}</td>
                         <td>{{customer.number}}</td>
                         <td>{{customer.nominee}}</td>
                         <td>{{customer.nomineeRelation}}</td>
-                        <td>{{customer.status}}</td>
+                        <td *ngIf="customer.status===true">Active</td>
+                        <td *ngIf="customer.status===false">Inactive</td>
                         <td><a href="viewCustomerDocument">View Documents</a></td>
+<td>
+                        <div *ngIf="customer.status == true">
+                            <div class="form-check form-switch" (click)="deactivateCustomer(customer.id)">
+                              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked >
+                              </div>
+                            </div>   
+                            <div *ngIf="customer.status == false">
+                            <div class="form-check form-switch" (click)="activateCustomer(customer.id)">
+                              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" unchecked >
+                              </div>
+                            </div>
+                            <!-- <a (click)="deleteCustomerById(customer.id)" style="color:blue; cursor: pointer;">Delete</a> -->
+                        </td>
+                        <td>
+                            <a (click)="deleteCustomerById(customer.id)" style="color:red; cursor: pointer;">Delete</a>
+                        </td>
+                    </ng-template>
                     </tr>
                 </tbody>
             </table>

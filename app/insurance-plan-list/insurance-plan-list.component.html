@@ -1,0 +1,33 @@
+<body style="background-color: white;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"><strong></strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+               
+                
+            
+            </ul>
+        </div>
+    </nav>
+
+    <div style="text-align: center;">
+        <h1 style="margin-top:20px ; color:black;">Welcome</h1>
+        <!-- <h3 style="color: black;">{{username}}</h3> -->
+        <div *ngFor="let insurancePlan of insurancePlans">
+            <div class="card" style="width: 18rem; margin: 10px; display: inline-block;">
+                <a class="card-block stretched-link text-decoration-none"
+                    href="insurance-plan-details/{{insurancePlan.id}}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{insurancePlan.name}}</h5>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br>
+</body>

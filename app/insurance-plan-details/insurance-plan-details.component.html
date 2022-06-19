@@ -1,0 +1,96 @@
+<body style="background-color: skyblue;">
+    <div class="text-center">
+        <h1>{{insurancePlan.name}}</h1>
+        <!-- <img src="https://www.alankitinsurance.com/images-new/Child-plan.jpg" class="rounded float-center" alt="..."> -->
+        <p>
+           {{insurancePlan.description}}
+        </p>
+        <br>
+        <br>
+        <br>
+        <br>
+    
+        <h2>Plan Details:</h2>
+        <table class="table table-hover">
+            <tbody>
+                <tr>
+                    <td>Policy term-minimum</td>
+                    <td>{{insurancePlan.policyTermMin}} Years</td>
+                </tr>
+                <tr>
+                    <td>Policy term-maximum</td>
+                    <td>{{insurancePlan.policyTermMax}}  Years</td>
+                </tr>
+                <tr>
+                    <td>Minimum Age</td>
+                    <td>{{insurancePlan.minAge}} </td>
+                </tr>
+                <tr>
+                    <td>Maximum Age</td>
+                    <td>{{insurancePlan.maxAge}} </td>
+                </tr>
+                <tr>
+                    <td>Minimum Investment Amount</td>
+                    <td>{{insurancePlan.sumAssuredMin}} </td>
+                </tr>
+                <tr>
+                    <td>Maxmimum Investment Amount</td>
+                    <td>{{insurancePlan.sumAssuredMax}} </td>
+                </tr>
+                <tr>
+                    <td>Profit Ratio</td>
+                    <td>{{insurancePlan.profitRatio}}%</td>
+                </tr>
+            </tbody>
+        </table>
+        <form>
+            <h2>Interest Calculator</h2>
+            <table class="table table-border">
+                <tbody>
+                    <tr>
+                        <td scope="col"><strong>No Of Years:</strong></td>
+                        <td scope="col"><input type="number" name="years" class="form-control" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="col"><strong>Total Investment Amount:</strong></td>
+                        <td scope="col"><input type="number" name="amount" class="form-control" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="col"><strong>Months:</strong></td>
+                        <td scope="col"><select name="months" class="form-control" >
+                                <option value="">Select</option>
+                                <option value='1 month'>1 Month</option>
+                                <option value='3 month'>3 Month</option>
+                                <option value='6 month'>6 Month</option>
+                                <option value='1 year'>1 Year</option>
+                            </select></td>
+                    </tr>
+                    <button class="btn btn-danger" type="submit" >Calculate</button>
+                    <br>
+                    <br>
+                    <tr>
+                        <td scope="col"><strong>Installment Amount:</strong></td>
+                        <td scope="col"><input type="text" name="installment amount" class="form-control"
+                                value=installAmt disabled></td>
+                    </tr>
+                    <tr>
+                        <td scope="col"><strong>Interest Amount:</strong></td>
+                        <td scope="col"><input type="text" name="interest amount" class="form-control"
+                                value=insterestAmt disabled></td>
+                    </tr>
+                    <tr>
+                        <td scope="col"><strong>Total Amount:</strong></td>
+                        <td scope="col"><input type="text" name="total amount" class="form-control"
+                               value=totalAmt disabled></td>
+                    </tr>
+                    <tr>
+                        <td><a class="btn btn-danger"
+                                routerLink="/insurance-account-details">Submit</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</body>

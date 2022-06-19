@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AgentService } from '../services/services/agent.service';
 
 @Component({
   selector: 'agent-dashboard',
@@ -9,8 +10,9 @@ import { Router } from '@angular/router';
 export class AgentDashboardComponent implements OnInit {
 
 username:any;
+agents:any[]=[]
 
-  constructor(private route:Router) { }
+  constructor(private route:Router, private agentService:AgentService) { }
 
   ngOnInit(): void {
     this.username = localStorage.getItem('userName');
@@ -20,4 +22,5 @@ username:any;
     localStorage.removeItem('userId');
     this.route.navigate(['/app-home']);
   }
+ 
 }
