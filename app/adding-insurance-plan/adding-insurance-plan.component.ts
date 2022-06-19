@@ -24,6 +24,7 @@ export class AddingInsurancePlanComponent implements OnInit {
    console.log(this.id)
    this.service.addInsurancePlan(this.id, data).subscribe(resp=>{
     console.log(resp)
+    alert("plan added")
    })
   }
 }

@@ -55,5 +55,12 @@ export class AdminService {
     return this.http.get<any[]>(url,  { headers: httpHeaders });
 
   }
+  getMasterTransaction(){
+    let url="http://localhost:8080/api/v1/masterTransaction/allTransaction"
+    const httpHeaders = new HttpHeaders({
+      "Authorization": "Bearer " + localStorage.getItem("token")
+    });
+    return this.http.get<any[]>(url,  { headers: httpHeaders });
 
+  }
 }
