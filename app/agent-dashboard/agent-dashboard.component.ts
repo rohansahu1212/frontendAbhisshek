@@ -10,8 +10,14 @@ import { AgentService } from '../services/services/agent.service';
 export class AgentDashboardComponent implements OnInit {
 
 username:any;
+
+agents:any[]=[]
+
+
+
 data:any
   constructor(private route:Router,private service:AgentService) { }
+
 
   ngOnInit(): void {
 

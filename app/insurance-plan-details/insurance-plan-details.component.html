@@ -49,17 +49,17 @@
                 <tbody>
                     <tr>
                         <td scope="col"><strong>No Of Years:</strong></td>
-                        <td scope="col"><input type="number" name="years" class="form-control" >
+                        <td scope="col"><input type="number" name="years" class="form-control" [(ngModel)]="noOfYear">
                         </td>
                     </tr>
                     <tr>
                         <td scope="col"><strong>Total Investment Amount:</strong></td>
-                        <td scope="col"><input type="number" name="amount" class="form-control" >
+                        <td scope="col"><input type="number" name="amount" class="form-control" [(ngModel)]="amount">
                         </td>
                     </tr>
                     <tr>
                         <td scope="col"><strong>Months:</strong></td>
-                        <td scope="col"><select name="months" class="form-control" >
+                        <td scope="col"><select name="months" class="form-control" [(ngModel)]="months">
                                 <option value="">Select</option>
                                 <option value='1 month'>1 Month</option>
                                 <option value='3 month'>3 Month</option>
@@ -67,27 +67,31 @@
                                 <option value='1 year'>1 Year</option>
                             </select></td>
                     </tr>
-                    <button class="btn btn-danger" type="submit" >Calculate</button>
+                    <button class="btn btn-danger" (click)="interestCalculator()" type="submit" >Calculate</button>
                     <br>
                     <br>
                     <tr>
                         <td scope="col"><strong>Installment Amount:</strong></td>
                         <td scope="col"><input type="text" name="installment amount" class="form-control"
-                                value=installAmt disabled></td>
+                                value=installAmt [(ngModel)]="installAmt" disabled></td>
                     </tr>
                     <tr>
                         <td scope="col"><strong>Interest Amount:</strong></td>
                         <td scope="col"><input type="text" name="interest amount" class="form-control"
-                                value=insterestAmt disabled></td>
+                                value=insterestAmt [(ngModel)]="insterestAmt" disabled></td>
                     </tr>
                     <tr>
                         <td scope="col"><strong>Total Amount:</strong></td>
                         <td scope="col"><input type="text" name="total amount" class="form-control"
-                               value=totalAmt disabled></td>
+                               value=totalAmt [(ngModel)]="totalAmt" disabled></td>
+                    </tr>
+                    <tr>
+                        <td ><strong> Agent Referral Code:</strong></td>
+                        <td><input type="text" name="referralCode" class="form-control" [(ngModel)]="agentReferralCode"></td>
                     </tr>
                     <tr>
                         <td><a class="btn btn-danger"
-                                routerLink="/insurance-account-details">Submit</a></td>
+                                 (click)="Submit()">Submit</a></td>
                     </tr>
                 </tbody>
             </table>
