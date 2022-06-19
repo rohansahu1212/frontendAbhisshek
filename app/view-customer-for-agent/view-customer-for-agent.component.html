@@ -35,21 +35,23 @@
                         <td *ngIf="customer.status===true">Active</td>
                         <td *ngIf="customer.status===false">Inactive</td>
                         <td><a href="viewCustomerDocument">View Documents</a></td>
-<td>
+                        <td>
                         <div *ngIf="customer.status == true">
                             <div class="form-check form-switch" (click)="deactivateCustomer(customer.id)">
-                              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked >
+                                <button type="button" class="btn btn-danger">Deactive</button>
                               </div>
                             </div>   
                             <div *ngIf="customer.status == false">
                             <div class="form-check form-switch" (click)="activateCustomer(customer.id)">
-                              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" unchecked >
+                                <button type="button" class="btn btn-primary">Active</button>
                               </div>
                             </div>
-                            <!-- <a (click)="deleteCustomerById(customer.id)" style="color:blue; cursor: pointer;">Delete</a> -->
+                           
                         </td>
                         <td>
-                            <a (click)="deleteCustomerById(customer.id)" style="color:red; cursor: pointer;">Delete</a>
+                            <div class="form-check form-switch" (click)="deleteCustomerById(customer.id)">
+                                <button type="button" class="btn btn-danger">Delete</button>
+                              </div>
                         </td>
                     </ng-template>
                     </tr>
