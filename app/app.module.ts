@@ -54,6 +54,11 @@ import { EmployeeProfileComponent } from './employee-profile/employee-profile.co
 import { InsurancePlanDetailsComponent } from './insurance-plan-details/insurance-plan-details.component';
 import { InsurancePlanListComponent } from './insurance-plan-list/insurance-plan-list.component';
 import { InsuranceCustomerDetailsComponent } from './insurance-customer-details/insurance-customer-details.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatProgressBar, MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatButtonModule } from '@angular/material/button';
+import { NgxUiLoaderComponent, NgxUiLoaderModule } from 'ngx-ui-loader';
 
 
 @NgModule({
@@ -114,7 +119,13 @@ import { InsuranceCustomerDetailsComponent } from './insurance-customer-details/
     FormsModule,
     HttpClientModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatProgressBarModule,
+    MatButtonModule,
+    NgxUiLoaderModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

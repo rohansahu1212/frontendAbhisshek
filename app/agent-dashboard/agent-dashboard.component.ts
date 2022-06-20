@@ -33,7 +33,7 @@ data:any
   logout(){
     localStorage.removeItem('token');
     localStorage.removeItem('userId');
-    this.route.navigate(['/app-home']);
+    this.route.navigate(['/']);
   }
  
 }

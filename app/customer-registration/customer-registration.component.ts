@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgxUiLoaderBlurredDirective, NgxUiLoaderService } from 'ngx-ui-loader';
 import { CustomerService } from '../services/services/customer.service';
 
 
@@ -12,7 +13,7 @@ import { CustomerService } from '../services/services/customer.service';
 export class CustomerRegistrationComponent implements OnInit {
   id:any;
   title:string="CUSTOMER REGISTRATION";
-  constructor(private service:CustomerService, private route:Router) {
+  constructor(private service:CustomerService, private route:Router,private loader:NgxUiLoaderService) {
   }
 
   exform: any;
@@ -32,15 +33,17 @@ export class CustomerRegistrationComponent implements OnInit {
   }
 
   addCustomerData()
-  {
+  { this.loader.start();
     this.service.addCustomerData(this.exform.value).subscribe(result=>{
       this.id = result;
       alert("This is your Auto-Generated User-Id: "+this.id.id);
       setTimeout(()=>{
+        this.loader.stop();
         this.route.navigate(['/customer-login']);
       },3000)
     })
     this.exform.reset();
+
   }
 
 }
