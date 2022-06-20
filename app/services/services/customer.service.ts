@@ -37,7 +37,7 @@ export class CustomerService {
   }
 
   userProfile(){
-    let url = "http://localhost:8080/api/v1/customer/"+ localStorage.getItem('userId')
+    let url = "http://localhost:8080/api/v1/customer/"+ localStorage.getItem('userId')+"/dto "
     const httpHeaders = new HttpHeaders({
       "Authorization":"Bearer "+localStorage.getItem("token") 
     });
@@ -68,6 +68,16 @@ export class CustomerService {
   deleteCustomerById(id:number){
     let token = "Bearer " + localStorage.getItem("token");
     let url =  "http://localhost:8080/api/v1/customer/"+id+"/delete";
+    return this.http.get<any[]>(url, {
+     headers: new HttpHeaders({
+        'Authorization': token
+      })
+    })
+  }
+
+  GetInsurnaceById(){
+    let token = "Bearer " + localStorage.getItem("token");
+    let url =  "http://localhost:8080/api/v1/customer/"+localStorage.getItem("userId")+"/transactions";
     return this.http.get<any[]>(url, {
      headers: new HttpHeaders({
         'Authorization': token

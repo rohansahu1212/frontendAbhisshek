@@ -1,0 +1,35 @@
+<body><br><br><br>
+<h2 class="text-center">{{title}}</h2>
+<div class="container">
+    <form>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Transaction Id</th>
+                    <th>Customer Name</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Type</th>
+                   
+                </tr>
+            </thead>
+            <tbody *ngFor="let transaction of data">
+                <tr>
+                    <td>{{transaction.id}}</td>
+                    <td>{{transaction.customerName}}</td>
+                    <td>{{transaction.amount}}</td>
+                    <td>{{transaction.time}}</td>
+                    <td>{{transaction.type}}</td>
+                </tr>
+            </tbody>
+            <!-- amount: 6000
+            customerName: "surya singh"
+            description: "you but policy"
+            id: 72
+            time: "2022-06-19T12:54:45.000+00:00"
+            type: "debit" -->
+        </table>
+    </form>
+</div>
+</body>
+
